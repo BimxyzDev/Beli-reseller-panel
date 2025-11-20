@@ -3,132 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reseller Panel</title>
+<title>Happy Birthday to you</title>
 
 <style>
     body {
-        background: #0a0a0a;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        padding: 20px;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ffd6e7, #fff4f9);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        color: #444;
     }
-    h2 { color: #1e90ff; }
-    .card {
-        background: #131313;
-        padding: 15px;
-        border-radius: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #222;
-    }
-    button {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
-        border: none;
-        border-radius: 8px;
-        background: #1e90ff;
-        color: white;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-    button:hover { background: #187bcd; }
 
-    /* form user */
-    #formUser {
-        display: none;
-        margin-top: 10px;
+    .card {
+        background: white;
+        width: 90%;
+        max-width: 420px;
+        padding: 27px 32px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        border-radius: 20px;
+        text-align: center;
+        animation: fadeIn 1.2s ease forwards;
+        opacity: 0;
     }
-    input {
-        width: 100%;
-        padding: 10px;
-        margin-top: 8px;
-        border-radius: 6px;
-        border: 1px solid #333;
-        background: #0f0f0f;
-        color: white;
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        color: #ff5f9e;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        line-height: 1.7;
+        margin-bottom: 14px;
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .signature {
+        margin-top: 25px;
+        font-style: italic;
+        color: #777;
+        opacity: 0.8;
+    }
+
+    /* hearts floating */
+    .heart {
+        position: fixed;
+        color: #ff4d88;
+        font-size: 18px;
+        animation: floatUp 5s linear infinite;
+        opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0); opacity: 0.7; }
+        100% { transform: translateY(-120vh); opacity: 0; }
     }
 </style>
-
 </head>
+
 <body>
 
-<h2>⚡ 𝐎𝐏𝐄𝐍 𝐑𝐄𝐒𝐄𝐋𝐋𝐄𝐑 𝐏𝐀𝐍𝐄𝐋 — 𝐅𝐔𝐋𝐋 𝐀𝐊𝐒𝐄𝐒 𝐁𝐑𝐎𝐎𝐎 😎⚡</h2>
-<p>𝐂𝐏𝐀𝐍𝐄𝐋 𝐕𝐈𝐀 𝐖𝐄𝐁𝐒𝐈𝐓𝐄 — 𝐌𝐎𝐃𝐀𝐋 𝐑𝐄𝐂𝐄𝐇, 𝐔𝐍𝐓𝐔𝐍𝐆 𝐆𝐀 𝐑𝐄𝐂𝐄𝐇‼️<br>
-<br>
-🚀 𝐊𝐄𝐍𝐀𝐏𝐀 𝐇𝐀𝐑𝐔𝐒 𝐒𝐄𝐑𝐕𝐄𝐑 𝐊𝐈𝐓𝐀?<br>
-✓ Anti delay<br>
-✓ Anti rusuh / anti intip / anti colong<br>
-✓ Server milik admin sendiri<br>
-✓ Stabil, anti lag<br>
-✓ Sepi kaya hati lu 😒😹<br>
-✓ Intinya: JOIN dulu baru tau kerennya 🔥<br>
-</p>
-
 <div class="card">
-    <h3>💼 𝐀𝐊𝐒𝐄𝐒 𝐔𝐒𝐄𝐑 — 𝟓.𝟎𝟎𝟎 (𝟓𝐊)</h3>
-    <p>✓ Dapat akses akun cpanel via website<br>
-✓ Bisa open panel<br>
-✓ Bisa jualan panel<br>
-✓ Bisa open sewa bot / jasa digital.<br>
-    </p>
-    <button onclick="showUserForm()">Beli Sekarang</button>
+    <h1>Happy Birthday 🎂✨ 1️⃣5️⃣</h1>
 
-    <!-- FORM INPUT USERNAME PASSWORD -->
-    <div id="formUser">
-        <input type="text" id="username" placeholder="Masukkan Username">
-        <input type="text" id="password" placeholder="Masukkan Password">
-        <button onclick="beliUser()">Chat Admin</button>
+    <p>Di dunia yang terus bergerak cepat, ada satu hari yang terasa lebih pelan dan lebih hangat dari biasanya… dan itu hari ini TANGGAL 25 NOVEMBER TAHUN 2025.</p>
+
+    <p>Ada seseorang yang mungkin tidak selalu terlihat, tidak selalu muncul, dan tidak pernah memaksa untuk hadir… tetapi diam-diam selalu memperhatikan dari jauh.</p>
+
+    <p>Hari ini, orang itu cuma ingin bilang: semoga kamu baik-baik saja. Semoga apa pun yang kamu simpan dalam diam, akhirnya menemukan jalannya.</p>
+
+    <p>Aku berharap kamu selalu dipertemukan dengan hal-hal yang membuatmu tersenyum tanpa sadar, dengan tempat-tempat yang membuatmu merasa pulang, dan dengan orang-orang yang benar-benar menjaga kamu tanpa syarat.</p>
+
+    <p>Setiap langkahmu ke depan mungkin terasa kecil, tapi percayalah… semua itu menghampirkan kamu pada versi dirimu yang lebih kuat dan lebih bahagia.</p>
+
+    <p>Semoga tahun ini membawa kamu ke hal-hal yang sudah lama kamu harapkan, bahkan yang tidak berani kamu ucapkan sekalipun.</p>
+    <p>HALAMAN INI KU BUAT KHUSUS HANYA UNTUKMU</p>
+
+    <div class="signature">
+        — dari seseorang yang masih mengingatmu,  
+        tanpa perlu menjelaskan siapa.
     </div>
 </div>
 
-<div class="card">
-    <h3>👑 𝐀𝐊𝐒𝐄𝐒 𝐀𝐃𝐌𝐈𝐍 — 𝟏𝟎.𝟎𝟎𝟎 (𝟏𝟎𝐊)</h3>
-    <p>𝐀𝐤𝐬𝐞𝐬 𝐒𝐮𝐥𝐭𝐚𝐧, 𝐟𝐢𝐭𝐮𝐫 𝐥𝐞𝐧𝐠𝐤𝐚𝐩 🤌<br>
-✓ Full akses admin website cpanel<br>
-✓ Bisa bikin akun reseller sendiri<br>
-✓ Bisa open panel<br>
-✓ Bisa jualan panel<br>
-✓ Bisa buka jasa sewa bot dll.
-    </p>
-    <button onclick="beliAdmin()">Beli Sekarang</button>
-</div>
-
 <script>
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "♥";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
 
-const admin = "6282231176451"; // WA lu
-
-function showUserForm() {
-    document.getElementById("formUser").style.display = "block";
-}
-
-function beliUser() {
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
-
-    if (!username || !password) {
-        alert("Username dan Password harus diisi!");
-        return;
-    }
-
-    const pesan =
-`_*INFO PEMBELIAN RESELLER PANEL*_
-*Role:* User
-*Username:* ${username}
-*Password:* ${password}
-*Metode pembayaran:* QRIS`;
-
-    window.location.href = `https://wa.me/${admin}?text=${encodeURIComponent(pesan)}`;
-}
-
-function beliAdmin() {
-    const pesan =
-`_*INFO PEMBELIAN RESELLER PANEL*_
-*Role:* Admin
-*Metode pembayaran:* QRIS`;
-
-    window.location.href = `https://wa.me/${admin}?text=${encodeURIComponent(pesan)}`;
-}
-
+    setTimeout(() => heart.remove(), 7000);
+}, 500);
 </script>
 
 </body>
