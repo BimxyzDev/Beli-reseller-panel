@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   params.append("metode", "qris");
 
   try {
-    const response = await fetch("https://atlantich2h.com/deposit/create", {
+    const response = await fetch("https://atlantich2h.com/deposit", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
