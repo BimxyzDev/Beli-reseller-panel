@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const api_key = "YOUR_API_KEY_HERE"; // ← GANTI DI SINI
+  const api_key = "TBdyF1Yp2mn63eoR1jkAX1ZrE3K96j41fo3tpN84A4TubYf7hflBKH9n5EBvsgGsFm3WPY482eAQ06zbN1WOgM1RvoY1w30gCdPh"; // ← GANTI DI SINI
 
   const params = new URLSearchParams();
   params.append("api_key", api_key);
