@@ -1,23 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Test Deposit Atlantic</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reseller Panel</title>
+
+<style>
+    body {
+        background: #0a0a0a;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    h2 { color: #1e90ff; }
+    .card {
+        background: #131313;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #222;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        background: #1e90ff;
+        color: white;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    button:hover { background: #187bcd; }
+</style>
+
 </head>
-<body style="font-family: Arial;">
-  <h2>Test Deposit Atlantic Pedia (QRIS)</h2>
+<body>
 
-  <button id="btn">Buat Deposit QRIS 1000</button>
+<h2>⚡ OPEN RESELLER PANEL ⚡</h2>
+<p>Pilih role pembelian, nanti otomatis diarahkan ke WhatsApp Admin.</p>
 
-  <pre id="result"></pre>
+<div class="card">
+    <h3>USER — 5K</h3>
+    <p>Akses user, bisa open panel & jualan panel.</p>
+    <button onclick="beli('user')">Chat Admin</button>
+</div>
+
+<div class="card">
+    <h3>ADMIN — 10K</h3>
+    <p>Full akses admin, bisa bikin reseller, bisa open panel unlimited.</p>
+    <button onclick="beli('admin')">Chat Admin</button>
+</div>
 
 <script>
-document.getElementById("btn").onclick = async () => {
-    const res = await fetch("/api/server", {
-        method: "POST"
-    });
+function beli(role) {
+    const admin = "628xxxxxx"; // ganti nomor WA lu
 
-    document.getElementById("result").innerText = await res.text();
-};
+    let pesan = "";
+
+    if (role === "user") {
+        pesan = `Info pembelian reseller panel\nRole: User\nUsername: \nPassword: \nMetode Pembayaran: QRIS`;
+    } else {
+        pesan = `Info pembelian reseller panel\nRole: Admin\nMetode Pembayaran: QRIS`;
+    }
+
+    window.location.href = `https://wa.me/${admin}?text=${encodeURIComponent(pesan)}`;
+}
 </script>
 
 </body>
