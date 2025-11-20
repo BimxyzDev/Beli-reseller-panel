@@ -1,70 +1,104 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reseller Panel</title>
-
 <style>
     body {
-        background: #0a0a0a;
+        background: #0d0d0d;
         color: #fff;
         font-family: Arial, sans-serif;
         padding: 20px;
     }
-    h2 { color: #1e90ff; }
-    .card {
-        background: #131313;
-        padding: 15px;
-        border-radius: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #222;
+    .container {
+        max-width: 450px;
+        margin: auto;
+        background: #1a1a1a;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px #000;
     }
-    button {
+    select, input, button {
         width: 100%;
         padding: 12px;
-        font-size: 16px;
-        border: none;
-        border-radius: 8px;
-        background: #1e90ff;
-        color: white;
-        cursor: pointer;
         margin-top: 10px;
+        border-radius: 8px;
+        border: none;
     }
-    button:hover { background: #187bcd; }
+    button {
+        background: #25d366;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+    }
 </style>
-
 </head>
 <body>
 
-<h2>⚡ OPEN RESELLER PANEL ⚡</h2>
-<p>Pilih role pembelian, nanti otomatis diarahkan ke WhatsApp Admin.</p>
+<div class="container">
+    <h2>Form Pembelian Reseller Panel</h2>
 
-<div class="card">
-    <h3>USER — 5K</h3>
-    <p>Akses user, bisa open panel & jualan panel.</p>
-    <button onclick="beli('user')">Chat Admin</button>
-</div>
+    <label>Role Akun</label>
+    <select id="role" onchange="toggleUserFields()">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select>
 
-<div class="card">
-    <h3>ADMIN — 10K</h3>
-    <p>Full akses admin, bisa bikin reseller, bisa open panel unlimited.</p>
-    <button onclick="beli('admin')">Chat Admin</button>
+    <div id="user-fields">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Masukkan Username">
+
+        <label>Password</label>
+        <input type="text" id="password" placeholder="Masukkan Password">
+    </div>
+
+    <label>Metode Pembayaran</label>
+    <select id="payment">
+        <option>QRIS</option>
+    </select>
+
+    <button onclick="sendWA()">Kirim WhatsApp</button>
 </div>
 
 <script>
-function beli(role) {
-    const admin = "6282231176451"; // ganti nomor WA lu
+function toggleUserFields() {
+    const role = document.getElementById("role").value;
+    const userFields = document.getElementById("user-fields");
 
-    let pesan = "";
+    if (role === "admin") {
+        userFields.style.display = "none";
+    } else {
+        userFields.style.display = "block";
+    }
+}
+
+function sendWA() {
+    const role = document.getElementById("role").value;
+    const payment = document.getElementById("payment").value;
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    let message = `Info pembelian reseller panel\n\nRole: ${role}`;
 
     if (role === "user") {
-        pesan = `Info pembelian reseller panel\nRole: User\nUsername: \nPassword: \nMetode Pembayaran: QRIS`;
+        if (!username || !password) {
+            alert("Username dan Password harus diisi!");
+            return;
+        }
+        message += `\nUsername: ${username}\nPassword: ${password}`;
     } else {
-        pesan = `Info pembelian reseller panel\nRole: Admin\nMetode Pembayaran: QRIS`;
+        message += `\n(Admin tidak perlu username & password)`;
     }
 
-    window.location.href = `https://wa.me/${admin}?text=${encodeURIComponent(pesan)}`;
+    message += `\nMetode Pembayaran: ${payment}`;
+
+    const nomor = "6282231176451";
+    const url = `https://wa.me/${nomor}?text=${encodeURIComponent(message)}`;
+
+    window.location.href = url;
 }
 </script>
 
