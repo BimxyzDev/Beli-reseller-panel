@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Deposit Atlantic</title>
+</head>
+<body style="font-family: Arial;">
+  <h2>Test Deposit Atlantic Pedia (QRIS)</h2>
+
+  <button id="btn">Buat Deposit QRIS 1000</button>
+
+  <pre id="result"></pre>
+
+<script>
+document.getElementById("btn").onclick = async () => {
+    const res = await fetch("/api/server", {
+        method: "POST"
+    });
+
+    document.getElementById("result").innerText = await res.text();
+};
+</script>
+
+</body>
+</html>
